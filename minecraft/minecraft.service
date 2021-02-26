@@ -1,0 +1,13 @@
+[Unit]
+Description=Minecraft Server
+After=systemd-networkd-wait-online.service
+Requires=systemd-networkd-wait-online.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/patched-dockerfiles/minecraft/
+ExecStart=/opt/patched-dockerfiles/minecraft/minecraft.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
