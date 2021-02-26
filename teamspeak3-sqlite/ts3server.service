@@ -1,0 +1,13 @@
+[Unit]
+Description=Teamspeak 3 Server
+After=systemd-networkd-wait-online.service
+Requires=systemd-networkd-wait-online.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/patched-dockerfiles/teamspeak3-sqlite/
+ExecStart=/opt/patched-dockerfiles/teamspeak3-sqlite/ts3server.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
