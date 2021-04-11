@@ -1,7 +1,7 @@
 #!/bin/bash
-TOBEBACKEDUP=""
+TOBEBACKEDUP="/var/lib/docker/volumes/valheim-data/_data/"
 BACKUPPATH="$1"
-
+mkdir -p "$BACKUPPATH"
 TEMPPATH=$(mktemp)
 tar -czf $TEMPPATH "$TOBEBACKEDUP"
 CHECKSUM=$(cat $TEMPPATH | md5sum)
