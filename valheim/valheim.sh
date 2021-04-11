@@ -14,7 +14,7 @@ docker build ./docker-files -t valheim --no-cache --build-arg username=$username
 docker run \
  --rm \
  -p "2456:2456/udp" -p "2456:2456/tcp" -p "10093:10093/tcp" \
- --volume "valheim-data:/home/valheim/.config/unity3d/IronGate/Valheim/worlds:rw" \
+ --volume "valheim-data:/home/valheim/.config/unity3d/IronGate/Valheim:rw" \
  --memory "8GB" \
  --memory-swap "0MB" \
  --cpus "3.0" \
