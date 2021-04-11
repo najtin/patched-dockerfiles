@@ -24,7 +24,7 @@ class Server(BaseHTTPRequestHandler):
 		self.wfile.write(json.dumps(new_d).encode())
 
 def run():
-	server = HTTPServer(("", 6666), Server)
+	server = HTTPServer(("", 10093), Server)
 	server.serve_forever()
 
 run()

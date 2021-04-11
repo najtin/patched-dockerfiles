@@ -2,10 +2,12 @@ FROM ubuntu:20.04
 ARG username
 ARG password
 ADD entrypoint.sh /entrypoint.sh
+ADD start_valheim_server.sh /start_valheim_server.sh
 ADD monitor.py /monitor.py
 RUN (chown root:root /entrypoint.sh \
 && chmod 766 /entrypoint.sh \
 && chmod 555 /monitor.py \
+&& chmod 555 /start_valheim_server.sh \
 && dpkg --add-architecture i386 \
 && apt-get -q -y update \
 && apt-get -q -y upgrade \
