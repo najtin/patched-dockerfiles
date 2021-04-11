@@ -1,0 +1,4 @@
+0 6 * * * systemctl restart valheim
+*/10 * * * * /opt/patched-dockerfiles/valheim/backup.sh
+0 5 * * * /opt/patched-dockerfiles/valheim/backup.sh
+10 5 * * 0 /opt/patched-dockerfiles/valheim/backup.sh

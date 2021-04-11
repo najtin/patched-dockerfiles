@@ -1,0 +1,13 @@
+[Unit]
+Description=Valheim Server
+After=systemd-networkd-wait-online.service
+Requires=systemd-networkd-wait-online.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/patched-dockerfiles/valheim/
+ExecStart=/opt/patched-dockerfiles/valheim/valheim.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
